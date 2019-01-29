@@ -1,0 +1,222 @@
+[
+	 {
+        "type": "menu",
+        "description": "MOUSE",
+        "items": [
+            {
+                "description": "start xbindkeys",
+                "cmd": [
+                    "xbindkeys"
+                ]
+            },
+            {
+                "description": "reset xbindkeys",
+                "cmd": [
+                    "pkill xbindkeys &&",
+                    "xbindkeys"
+                ]
+            },
+            {
+                "description": "show xbindkeys",
+                "cmd": [
+                    "xbindkeys_show"
+                ]
+            },
+            {
+                "description": "main xbindkeys",
+                "cmd": [
+                    "cp ~/.xbindkeysrc_main ~/.xbindkeysrc &&",
+                    "pkill xbindkeys &&",
+                    "xbindkeys"
+                ]
+            },
+            {
+                "description": "gimp xbindkeys",
+                "cmd": [
+                    "cp ~/.xbindkeysrc_gimp ~/.xbindkeysrc &&",
+                    "pkill xbindkeys &&",
+                    "xbindkeys"
+                ]
+            },
+            {
+                "description": "blender xbindkeys",
+                "cmd": [
+                    "cp ~/.xbindkeysrc_blender ~/.xbindkeysrc &&",
+                    "pkill xbindkeys &&",
+                    "xbindkeys"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "menu",
+        "description": "WEB SERVER",
+        "items": [
+	
+            {
+                "description": "START web server",
+                "cmd": [
+                    "sudo systemctl start apache2 &&",
+                    "sudo systemctl start mysql"
+                ]
+            },
+            {
+                "description": "RESTART web server",
+                "cmd": [
+                    "sudo systemctl restart apache2 &&",
+                    "sudo systemctl restart mysql"
+                ]
+            },
+            {
+                "description": "RESTART apache2",
+                "cmd": [
+                    "sudo systemctl restart apache2"
+                ]
+            },
+            {
+                "description": "STOP web server",
+                "cmd": [
+                    "sudo systemctl stop apache2 &&",
+                    "sudo systemctl stop mysql"
+                ]
+            },
+            {
+                "description": "ENABLE web server",
+                "cmd": [
+                    "sudo systemctl enable apache2 &&",
+                    "sudo systemctl enable mysql"
+                ]
+            },
+            {
+                "description": "DISABLE web server",
+                "cmd": [
+                    "sudo systemctl disable apache2 &&",
+                    "sudo systemctl disable mysql"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "menu",
+        "description": "OTHER",
+        "items": [
+            {
+                "description": "Mount Google Drive",
+                "cmd": [
+                    "google-drive-ocamlfuse ~/Drive"
+                ]
+            },
+            {
+                "description": "update",
+                "cmd": [
+                    "sudo apt-get update &&",
+                    "sudo apt-get upgrade -y"
+                ]
+            },
+            {
+                "description": "gnome hot corners",
+                "cmd": [
+                    "brightside-properties"
+                ]
+            },
+            {
+                "description": "Edit Custom Commands",
+                "cmd": [
+                    "subl ~/Documents/Dropbox/.3_CUSTOM/3_CONFIGS/guake/guakecustom.json"
+                ]
+            },
+            {
+                "description": "Edit Main xbindkeys",
+                "cmd": [
+                    "subl ~/Documents/Dropbox/.3_CUSTOM/3_CONFIGS/home/.xbindkeysrc_main"
+                ]
+            },
+            {
+                "description": "Edit Gimp xbindkeys",
+                "cmd": [
+                    "subl ~/Documents/Dropbox/.3_CUSTOM/3_CONFIGS/home/.xbindkeysrc_gimp"
+                ]
+            }
+        ]
+    },
+     {
+        "type": "menu",
+        "description": "Git",
+        "items": [
+            {
+                "description": "git add *",
+                "cmd": [
+                    "git add *"
+                ]
+            },
+            {
+                "description": "git commit",
+                "cmd": [
+                    "git commit"
+                ]
+            },
+            {
+                "description": "git init",
+                "cmd": [
+                    "git init"
+                ]
+            },
+            {
+		"type": "menu",
+		"description": "Git commit message",
+		"items": [
+		    {
+		        "description": "write",
+		        "cmd": [
+		            "xdotool key --clearmodifiers ctrl+o"
+		        ]
+		    },
+		    {
+		        "description": "exit",
+		        "cmd": [
+		            "xdotool key --clearmodifiers ctrl+x"
+		        ]
+		    },
+		    {
+		        "description": "git init",
+		        "cmd": [
+		            "git init"
+		        ]
+		    }
+        	]
+    	    }
+        ]
+     },
+     {
+        "type": "menu",
+        "description": "STATUS",
+        "items": [
+            {
+                "description": "Running Servies",
+                "cmd": [
+                    "ls",
+                    "-A"
+                ]
+            },
+            {
+                "description": "Net Connected",
+                "cmd": [
+                    "netstat -anp | grep -e tcp -e udp"
+                ]
+            },
+            {
+                "description": "Status All",
+                "cmd": [
+                    "service --status-all"
+                ]
+            }
+        ]
+    },
+    {
+        "description": "List all files",
+        "cmd": [
+            "ls",
+            "-ls"
+        ]
+    }
+]
