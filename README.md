@@ -7,14 +7,19 @@ Mouse
 This is a shortcut to reload the xbindkeys config files I have set up for various programs. I have a mouse with 19 buttons that xbindkeys is very useful for. 
 
 Web Server
-This provides functionality for my local development Linux Apache MySQL PHP (LAMP) server
 Description of commands
--Start apache and mysql service
--Stop apache and mysql service
--Restart apache and mysql service
--Restart apache service
--Enable apache and mysql (this is for automatic system startup)
--Disable apache and mysql (this is for automatic system startup)
+
+Start apache and mysql service
+
+Stop apache and mysql service
+
+Restart apache and mysql service
+
+Restart apache service
+
+Enable apache and mysql (this is for automatic system startup)
+
+Disable apache and mysql (this is for automatic system startup)
 
 Other
 There are some random commands here, edit or remove any you don't need, but be certain to keep the 
