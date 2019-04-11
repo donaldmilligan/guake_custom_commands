@@ -59,7 +59,7 @@
             {
                 "description": "git add ?",
                 "cmd": [
-                    "echo 'enter file name or . for all files'; read addM; if [[ $addM ]]; then git add $addM && echo 'git add ${addM}'; unset addM ;else echo 'no parameters set';fi"
+                    "echo 'enter file name or . for all files'; read addM; if [[ $addM ]]; then git add '$addM' && echo 'git add ${addM}'; unset addM ;else echo 'no parameters set';fi"
                 ]
             },
             {
@@ -90,7 +90,8 @@
             {
                 "description": "commit -am",
                 "cmd": [
-                    " git add *; echo 'Be sure to enter commit message; read commitM; git commit -am $commitM; commitM='git commit -am $commitM'; echo $commitM; unset commitM;"
+
+                    "echo 'Be sure to enter commit message'; read commitM; git add . ; git commit -am '$commitM'; echo $commitM && unset commitM;"
                 ]
             },
             {
