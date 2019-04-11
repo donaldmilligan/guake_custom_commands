@@ -59,7 +59,7 @@
             {
                 "description": "git add ?",
                 "cmd": [
-                    "echo 'enter file name or . for all files'; read addM; if [[ $addM ]]; then git add '$addM' && echo 'git add ${addM}'; unset addM ;else echo 'no parameters set';fi"
+                    "echo 'enter file name or dot (.) for all files'; read addM; if [[ $addM ]]; then git add $addM; addM+='git add '${addM}; unset addM ;else echo 'no parameters set';fi"
                 ]
             },
             {
@@ -90,8 +90,8 @@
             {
                 "description": "commit -am",
                 "cmd": [
-
-                    "echo 'Be sure to enter commit message'; read commitM; git add . ; git commit -am '$commitM'; echo $commitM && unset commitM;"
+                    "echo 'Enter A Commit Message'; read commitM; if [[ $commitM ]]; then git commit -am $commitM; commitM+=' git add '$commitM' '; echo $commitM; unset commitM ;else echo 'no parameters set';fi"
+                    
                 ]
             },
             {
@@ -112,6 +112,13 @@
             "type": "menu",
             "description": "STATS",
                 "items": [
+
+            {
+                "description": "Status",
+                "cmd": [
+                    "git status"
+                ]
+            },
             {
                 "description": "Log",
                 "cmd": [
@@ -140,12 +147,6 @@
                 "description": "show-ref",
                 "cmd": [
                     "git show-ref"
-                ]
-            },
-            {
-                "description": "Status",
-                "cmd": [
-                    "git status"
                 ]
             }
             ]
