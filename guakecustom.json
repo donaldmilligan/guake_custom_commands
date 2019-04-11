@@ -59,7 +59,7 @@
             {
                 "description": "git add ?",
                 "cmd": [
-                    "echo 'enter file name or dot (.) for all files'; read addM; if [[ $addM ]]; then git add $addM; addM+='git add '${addM}; unset addM ;else echo 'no parameters set';fi"
+                    "echo 'Dot (.) for ALL FILES, or file name for a single'; read addM; if [[ $addM ]]; then git add $addM; var='git add '; var+=${addM}; echo $var; unset var; unset addM ;else echo 'no parameters set';fi"
                 ]
             },
             {
