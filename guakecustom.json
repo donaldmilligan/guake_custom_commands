@@ -90,7 +90,7 @@
             {
                 "description": "commit -am",
                 "cmd": [
-                    "echo 'enter commit message'; read commitM; if [[ $commitM ]]; then git commit -am $commitM && unset commitM ;else echo 'no parameters set';fi"
+                    " git add *; echo 'Be sure to enter commit message; read commitM; git commit -am $commitM; commitM='git commit -am $commitM'; echo $commitM; unset commitM;"
                 ]
             },
             {
