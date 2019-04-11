@@ -1,5 +1,223 @@
 [
-	 {
+     
+    {
+        "type": "menu",
+        "description": "WEB SERVER",
+        "items": [
+    
+            {
+                "description": "START web server",
+                "cmd": [
+                    "sudo systemctl start apache2 &&",
+                    "sudo systemctl start mysql"
+                ]
+            },
+            {
+                "description": "RESTART web server",
+                "cmd": [
+                    "sudo systemctl restart apache2 &&",
+                    "sudo systemctl restart mysql"
+                ]
+            },
+            {
+                "description": "RESTART apache2",
+                "cmd": [
+                    "sudo systemctl restart apache2"
+                ]
+            },
+            {
+                "description": "STOP web server",
+                "cmd": [
+                    "sudo systemctl stop apache2 &&",
+                    "sudo systemctl stop mysql"
+                ]
+            },
+            {
+                "description": "ENABLE web server",
+                "cmd": [
+                    "sudo systemctl enable apache2 &&",
+                    "sudo systemctl enable mysql"
+                ]
+            },
+            {
+                "description": "DISABLE web server",
+                "cmd": [
+                    "sudo systemctl disable apache2 &&",
+                    "sudo systemctl disable mysql"
+                ]
+            }
+        ]
+    },
+     {
+        "type": "menu",
+        "description": "GIT",
+        "items": [
+            {
+        "type": "menu",
+        "description": "Save",
+        "items": [
+            {
+                "description": "git add ?",
+                "cmd": [
+                    "echo 'enter file name or . for all files'; read addM; if [[ $addM ]]; then git add $addM && echo 'git add ${addM}'; unset addM ;else echo 'no parameters set';fi"
+                ]
+            },
+            {
+                "description": "git add .",
+                "cmd": [
+                    "git add ."
+                ]
+            },
+            {
+                "description": "git commit",
+                "cmd": [
+                    "git commit"
+                ]
+            },
+            {
+                "description": "push origin master",
+                "cmd": [
+                    "git push origin master"
+                ]
+            }
+            ]
+            },
+            
+            {
+        "type": "menu",
+        "description": "SPECIAL",
+        "items": [
+            {
+                "description": "commit -am",
+                "cmd": [
+                    "echo 'enter commit message'; read commitM; if [[ $commitM ]]; then git commit -am $commitM && unset commitM ;else echo 'no parameters set';fi"
+                ]
+            },
+            {
+                "description": "fetch",
+                "cmd": [
+                    "git fetch"
+                ]
+            },
+            {
+                "description": "git pull",
+                "cmd": [
+                    "git pull"
+                ]
+            }
+            ]
+            },
+            {
+            "type": "menu",
+            "description": "STATS",
+                "items": [
+            {
+                "description": "Log",
+                "cmd": [
+                    "git log"
+                ]
+            },
+            {
+                "description": "Log + Stats",
+                "cmd": [
+                    "git log --stat"
+                ]
+            },
+            {
+                "description": "Log Pretty",
+                "cmd": [
+                    "git log --pretty=format:'%h - %an, %ar : %s'"
+                ]
+            },
+            {
+                "description": "Status",
+                "cmd": [
+                    "git status"
+                ]
+            },
+            {
+                "description": "show-ref",
+                "cmd": [
+                    "git show-ref"
+                ]
+            },
+            {
+                "description": "Status",
+                "cmd": [
+                    "git status"
+                ]
+            }
+            ]
+            },
+            {
+            "type": "menu",
+            "description": "Config",
+                "items": [
+            {
+                "description": "Global Name",
+                "cmd": [
+                    "git config --global user.name 'Don Milligan'"
+                ]
+            },
+            {
+                "description": "Global Email",
+                "cmd": [
+                    "git config --global user.email 'freelancedon.ca@gmail.com'"
+                ]
+            },
+            {
+                "description": "Global Color",
+                "cmd": [
+                    "git config --global color.ui true"
+                ]
+            },
+            {
+                "description": "Global List",
+                "cmd": [
+                    "git config --list"
+                ]
+            }
+            ]
+            },
+            {
+                "description": "checkout branch -b",
+                "cmd": [
+                    "git checkout -b"
+                ]
+            },
+            {
+            "type": "menu",
+            "description": "URLs",
+                "items": [
+            {
+                "description": "url logs",
+                "cmd": [
+                    "google-chrome https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History"
+                ]
+            },
+            {
+                "description": "url commit",
+                "cmd": [
+                    "google-chrome https://dev.to/juni/git-and-github---must-know-commands-to-make-your-first-commit-333c"
+                ]
+            },
+            {
+                "description": "url mega",
+                "cmd": [
+                    "google-chrome https://rubygarage.org/blog/most-basic-git-commands-with-examples"
+                ]
+            }
+            ]
+            },
+            {
+                "description": "git init",
+                "cmd": [
+                    "git init"
+                ]
+            }
+        ]
+     },
+     {
         "type": "menu",
         "description": "MOUSE",
         "items": [
@@ -48,50 +266,77 @@
             }
         ]
     },
+     {
+        "type": "menu",
+        "description": "STATS",
+        "items": [
+            {
+                "description": "Servies",
+                "cmd": [
+                    "service --status-all"
+                ]
+            },
+            {
+                "description": "Processes",
+                "cmd": [
+                    "ps -A"
+                ]
+            },
+            {
+                "description": "Process Tree",
+                "cmd": [
+                    "pstree"
+                ]
+            },
+            {
+                "description": "Net Connected",
+                "cmd": [
+                    "netstat -anp | grep -e tcp -e udp"
+                ]
+            },
+            {
+                "description": "htop",
+                "cmd": [
+                    "htop"
+                ]
+            }
+        ]
+    },
     {
         "type": "menu",
-        "description": "WEB SERVER",
+        "description": "CMDS",
         "items": [
-	
             {
-                "description": "START web server",
+                "description": "List all files",
                 "cmd": [
-                    "sudo systemctl start apache2 &&",
-                    "sudo systemctl start mysql"
+                    "ls",
+                    "-ls"
                 ]
             },
             {
-                "description": "RESTART web server",
+                "description": "upgrade",
                 "cmd": [
-                    "sudo systemctl restart apache2 &&",
-                    "sudo systemctl restart mysql"
+                    "sudo apt-get update &&",
+                    "sudo apt-get upgrade -y"
                 ]
             },
             {
-                "description": "RESTART apache2",
+                "description": "dist upgrade",
                 "cmd": [
-                    "sudo systemctl restart apache2"
+                    "sudo apt-get update &&",
+                    "sudo apt-get dist-upgrade -y"
                 ]
             },
             {
-                "description": "STOP web server",
+                "description": "Mount Google Drive",
                 "cmd": [
-                    "sudo systemctl stop apache2 &&",
-                    "sudo systemctl stop mysql"
+                    "google-drive-ocamlfuse ~/Drive"
                 ]
             },
             {
-                "description": "ENABLE web server",
+                "description": "gnome hot corners",
                 "cmd": [
-                    "sudo systemctl enable apache2 &&",
-                    "sudo systemctl enable mysql"
-                ]
-            },
-            {
-                "description": "DISABLE web server",
-                "cmd": [
-                    "sudo systemctl disable apache2 &&",
-                    "sudo systemctl disable mysql"
+                    "brightside-properties"
                 ]
             }
         ]
@@ -100,25 +345,6 @@
         "type": "menu",
         "description": "OTHER",
         "items": [
-            {
-                "description": "Mount Google Drive",
-                "cmd": [
-                    "google-drive-ocamlfuse ~/Drive"
-                ]
-            },
-            {
-                "description": "update",
-                "cmd": [
-                    "sudo apt-get update &&",
-                    "sudo apt-get upgrade -y"
-                ]
-            },
-            {
-                "description": "gnome hot corners",
-                "cmd": [
-                    "brightside-properties"
-                ]
-            },
             {
                 "description": "Edit Custom Commands",
                 "cmd": [
@@ -137,86 +363,6 @@
                     "subl ~/Documents/Dropbox/.3_CUSTOM/3_CONFIGS/home/.xbindkeysrc_gimp"
                 ]
             }
-        ]
-    },
-     {
-        "type": "menu",
-        "description": "Git",
-        "items": [
-            {
-                "description": "git add *",
-                "cmd": [
-                    "git add *"
-                ]
-            },
-            {
-                "description": "git commit",
-                "cmd": [
-                    "git commit"
-                ]
-            },
-            {
-                "description": "git init",
-                "cmd": [
-                    "git init"
-                ]
-            },
-            {
-		"type": "menu",
-		"description": "Git commit message",
-		"items": [
-		    {
-		        "description": "write",
-		        "cmd": [
-		            "xdotool key --clearmodifiers ctrl+o"
-		        ]
-		    },
-		    {
-		        "description": "exit",
-		        "cmd": [
-		            "xdotool key --clearmodifiers ctrl+x"
-		        ]
-		    },
-		    {
-		        "description": "git init",
-		        "cmd": [
-		            "git init"
-		        ]
-		    }
-        	]
-    	    }
-        ]
-     },
-     {
-        "type": "menu",
-        "description": "STATUS",
-        "items": [
-            {
-                "description": "Running Servies",
-                "cmd": [
-                    "ls",
-                    "-A"
-                ]
-            },
-            {
-                "description": "Net Connected",
-                "cmd": [
-                    "netstat -anp | grep -e tcp -e udp"
-                ]
-            },
-            {
-                "description": "Status All",
-                "cmd": [
-                    "service --status-all"
-                ]
-            }
-        ]
-    },
-    {
-        "description": "List all files",
-        "cmd": [
-            "ls",
-            "-ls"
         ]
     }
 ]
