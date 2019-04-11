@@ -90,7 +90,7 @@
             {
                 "description": "commit -am",
                 "cmd": [
-                    "echo 'Enter A Commit Message'; read commitM; if [[ $commitM ]]; then git commit -am $commitM; commitM+=' git add '$commitM' '; echo $commitM; unset commitM ;else echo 'no parameters set';fi"
+                    "echo 'Enter A Commit Message'; read commitM; if [[ $commitM ]]; then mynumber=$commitM; git commit -am \"$mynumber\"; var=' git commit -am '; var+=${commitM}; echo $var; echo $commitM; unset var; unset commitM ;else echo 'no parameters set';fi"
                     
                 ]
             },
